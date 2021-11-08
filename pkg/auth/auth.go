@@ -14,7 +14,7 @@ var allowedHeaders = map[string]string{
 }
 
 /**
-Auth middleware
+	Auth middleware
 */
 func AuthMiddleware(handler http.HandlerFunc) http.HandlerFunc {
 	return func(rw http.ResponseWriter, request *http.Request) {
@@ -34,7 +34,7 @@ func AuthMiddleware(handler http.HandlerFunc) http.HandlerFunc {
 }
 
 /**
-Check if request is authorized
+	Check if request is authorized
 */
 func IsAuthorized(request *http.Request) bool {
 	authHeaderValue, exist := request.Header["Authorization"]
@@ -66,7 +66,7 @@ func IsAuthorized(request *http.Request) bool {
 }
 
 /**
-Validate HTTP headers
+	Validate HTTP headers
 */
 func ValidateHeaders(request *http.Request) bool {
 	for key, value := range allowedHeaders {
